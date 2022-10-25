@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.movieticket.list.MovieTicketListController">
+   <children>
+      <Text fill="#7381eb" layoutX="262.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MOVIE TICKET">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Button layoutX="17.0" layoutY="113.0" mnemonicParsing="false" onAction="#goToListShow" text="&lt;&lt;Back" />
+      <Button layoutX="640.0" layoutY="113.0" mnemonicParsing="false" onAction="#goToListFilm" text="Go To List Film" />
+      <TableView fx:id="tbMovieTicket" layoutX="17.0" layoutY="169.0" prefHeight="253.0" prefWidth="718.0">
+        <columns>
+          <TableColumn fx:id="tdIdTicket" prefWidth="82.0" text="IdTicket" />
+          <TableColumn fx:id="tdNameFilm" prefWidth="91.0" text="Name Of Film" />
+            <TableColumn fx:id="tdStarShow" prefWidth="87.0" text="Start Show" />
+            <TableColumn fx:id="tdEndShow" prefWidth="82.0" text="End Show" />
+            <TableColumn fx:id="tdSeatName" prefWidth="94.0" text="Seat" />
+            <TableColumn fx:id="tdRoomName" prefWidth="99.0" text="Room" />
+            <TableColumn fx:id="tdPrice" prefWidth="99.0" text="Price" />
+            <TableColumn fx:id="tdAction" prefWidth="99.0" text="Action" />
+        </columns>
+      </TableView>
+      <Button layoutX="666.0" layoutY="452.0" mnemonicParsing="false" onAction="#goToCreatOrder" text="Go To Bag" />
+   </children>
+</Pane>

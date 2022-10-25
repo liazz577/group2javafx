@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="group2JP2.showtime.list.ShowTimeListController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#f20909" layoutX="208.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SHOWTIME">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tbShowTime" layoutX="17.0" layoutY="122.0" prefHeight="234.0" prefWidth="555.0">
+        <columns>
+          <TableColumn fx:id="tdId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="tdStartShow" prefWidth="169.0" text="Start Show" />
+            <TableColumn fx:id="tdEndShow" prefWidth="178.0" text="End Show" />
+            <TableColumn fx:id="tdAction" prefWidth="132.0" text="Action" />
+        </columns>
+      </TableView>
+      <Button onAction="#goToListFilm" layoutX="17.0" layoutY="74.0" mnemonicParsing="false" text="&lt;&lt;Back To List Film" />
+   </children>
+</Pane>

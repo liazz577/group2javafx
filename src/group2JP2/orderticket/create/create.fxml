@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.orderticket.create.OrderTicketCreatController">
+   <children>
+      <Text fill="#7381eb" layoutX="194.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE ORDER TICKET">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Button layoutX="17.0" layoutY="113.0" mnemonicParsing="false" onAction="#goToMovieTicket" text="&lt;&lt;Back" />
+      <Button layoutX="640.0" layoutY="113.0" mnemonicParsing="false" onAction="#goToHome" text="Go To List Film" />
+      <TableView fx:id="tbMovieTicket" layoutX="17.0" layoutY="169.0" prefHeight="253.0" prefWidth="718.0">
+        <columns>
+          <TableColumn fx:id="tdIdTicket" prefWidth="82.0" text="IdTicket" />
+          <TableColumn fx:id="tdNameFilm" prefWidth="91.0" text="Name Of Film" />
+            <TableColumn fx:id="tdStarShow" prefWidth="87.0" text="Start Show" />
+            <TableColumn fx:id="tdEndShow" prefWidth="82.0" text="End Show" />
+            <TableColumn fx:id="tdSeatName" prefWidth="94.0" text="Seat" />
+            <TableColumn fx:id="tdRoomName" prefWidth="99.0" text="Room" />
+            <TableColumn fx:id="tdPrice" prefWidth="99.0" text="Price" />
+            <TableColumn fx:id="tdAction" prefWidth="99.0" text="Action" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtTotalMoney" layoutX="586.0" layoutY="463.0" />
+      <Text fill="#3f1896" fontSmoothingType="LCD" layoutX="472.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Money">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="615.0" layoutY="496.0" mnemonicParsing="false" onAction="#createOrderTicket" text="Create Order Ticket" />
+      <Button layoutX="124.0" layoutY="113.0" mnemonicParsing="false" onAction="#goToListOrder" text="Go To List Order" />
+      <TextField fx:id="txtQtyTicket" layoutX="586.0" layoutY="430.0" />
+      <Text fill="#3f1896" fontSmoothingType="LCD" layoutX="472.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty Ticket">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
