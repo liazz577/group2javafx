@@ -26,6 +26,7 @@ public class HomeController implements Initializable {
     public TableColumn<Film,String> tdType;
     public TableColumn<Film, Button> tdAction;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tdId.setCellValueFactory(new PropertyValueFactory<Film,Integer>("id"));

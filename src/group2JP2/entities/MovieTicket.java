@@ -30,7 +30,7 @@ public class MovieTicket {
     public MovieTicket() {
     }
 
-    public MovieTicket(Integer id, Float price, Integer filmId, Integer showTimeId, Integer seatId, Integer orderId) {
+    public MovieTicket(Integer id, Float price, Integer filmId, Integer seatId , Integer showTimeId , Integer orderId) {
         this.id = id;
         this.price = price;
         this.filmId = filmId;
@@ -66,9 +66,6 @@ public class MovieTicket {
     }
 
     public Integer getFilmId() {
-        if(Film.selectFilm!=null){
-            return Film.selectFilm.getId();
-        }
         return filmId;
     }
 
@@ -77,9 +74,6 @@ public class MovieTicket {
     }
 
     public Integer getShowTimeId() {
-        if(ShowTime.selectShowTime!=null){
-            return ShowTime.selectShowTime.getId();
-        }
         return showTimeId;
     }
 
@@ -90,6 +84,11 @@ public class MovieTicket {
         ShowTimeRepository str = new ShowTimeRepository();
         return str.findOne(this.getShowTimeId());
     }
+    public Film film(){
+        FilmRepository fr = new FilmRepository();
+        return fr.findOne(this.getFilmId());
+    }
+
     public LocalDateTime getStartShow(){
         return this.showTime().getStartShow();
     }
@@ -115,10 +114,7 @@ public class MovieTicket {
     }
 
     public String getNameFilm() {
-        if(Film.selectFilm!=null){
-            return Film.selectFilm.getName();
-        }
-        return nameFilm;
+        return this.film().getName();
     }
 
     public void setNameFilm(String nameFilm) {

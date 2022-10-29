@@ -96,6 +96,7 @@ public class FilmRepository implements IFilmRepository {
             String sql = "select * from films where fid =?";
             Connector conn = Connector.getInstance();
             ArrayList arr = new ArrayList<>();
+            arr.add(id);
             ResultSet rs = conn.executeQuery(sql,arr);
             while (rs.next()){
                 return new Film(rs.getInt("fid"),

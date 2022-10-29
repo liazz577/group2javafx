@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.orderticket.create.OrderTicketCreatController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.orderticket.create.CreateOrderController">
    <children>
       <Text fill="#7381eb" layoutX="194.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE ORDER TICKET">
          <font>
@@ -32,7 +32,6 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button layoutX="615.0" layoutY="496.0" mnemonicParsing="false" onAction="#createOrderTicket" text="Create Order Ticket" />
       <Button layoutX="124.0" layoutY="113.0" mnemonicParsing="false" onAction="#goToListOrder" text="Go To List Order" />
       <TextField fx:id="txtQtyTicket" layoutX="586.0" layoutY="430.0" />
       <Text fill="#3f1896" fontSmoothingType="LCD" layoutX="472.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty Ticket">
@@ -40,5 +39,6 @@
             <Font size="18.0" />
          </font>
       </Text>
+      <Button layoutX="691.0" layoutY="496.0" mnemonicParsing="false" onAction="#createOrder" text="Order" />
    </children>
 </Pane>

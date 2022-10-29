@@ -5,13 +5,15 @@ import java.util.ArrayList;
 
 public class Connector {
     public final static String connectionString = "jdbc:mysql://localhost:3306/group";
-    public final static String user ="root";
-    public final static String pwd ="";
-    Connection conn;
+    public final static String user = "root";
+    public final static String pwd = "";// neu la xampp: "" , mamp: "root"
 
+    Connection conn;
     private static Connector instance;
 
-    private Connector(){
+
+
+    private Connector() {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             this.conn = DriverManager.getConnection(connectionString,user,pwd);
@@ -21,43 +23,47 @@ public class Connector {
     }
 
     public static Connector getInstance(){
-        if(instance==null){
+        if(instance == null){
             instance = new Connector();
         }
         return instance;
     }
+
     public Statement getStatement() throws Exception{
         return conn.createStatement();
     }
+
     public ResultSet query(String sql){
-        try{
+        try {
             return getStatement().executeQuery(sql);
         }catch (Exception e){
             return null;
         }
     }
+
     public boolean executeQuery(String sql){
-        try{
+        try {
             getStatement().execute(sql);
         }catch (Exception e){
             return false;
         }
         return true;
     }
+
     public PreparedStatement getPreparedStatement(String sql) throws Exception{
         return conn.prepareStatement(sql);
     }
+
     public boolean execute(String sql, ArrayList parameters){
-        try{
+        try {
             PreparedStatement pstm = getPreparedStatement(sql);
-            for(int i=0;i<parameters.size();i++){
+            for(int i=0;i < parameters.size();i++){
                 if(parameters.get(i) instanceof Integer){
-                    pstm.setInt(i+1,(Integer) parameters.get(i));}
-                else if(parameters.get(i) instanceof Double){
+                    pstm.setInt(i+1,(Integer)parameters.get(i));
+                }else if(parameters.get(i) instanceof Double){
                     pstm.setDouble(i+1,(Double) parameters.get(i));
-                }
-                else{
-                    pstm.setString(i+1,(String) parameters.get(i));
+                }else{
+                    pstm.setString(i+1,(String)parameters.get(i));
                 }
             }
             pstm.execute();
@@ -68,23 +74,21 @@ public class Connector {
     }
 
     public ResultSet executeQuery(String sql, ArrayList parameters){
-        try{
+        try {
             PreparedStatement pstm = getPreparedStatement(sql);
-            for(int i=0;i<parameters.size();i++){
+            for(int i=0;i < parameters.size();i++){
                 if(parameters.get(i) instanceof Integer){
-                    pstm.setInt(i+1,(Integer) parameters.get(i));
-                }else if(parameters.get(i) instanceof  Double){
+                    pstm.setInt(i+1,(Integer)parameters.get(i));
+                }else if(parameters.get(i) instanceof Double){
                     pstm.setDouble(i+1,(Double) parameters.get(i));
-                }else {
-                    pstm.setString(i+1,(String) parameters.get(i));
+                }else{
+                    pstm.setString(i+1,(String)parameters.get(i));
                 }
             }
             return pstm.executeQuery();
-
         }catch (Exception e){
             return null;
         }
     }
-
 
 }

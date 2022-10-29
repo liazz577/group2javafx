@@ -40,7 +40,7 @@ public class MovieTicketRepository implements IMovieTicketRepository {
         try{
             String sql ="insert into movietickets(price,fid,seid,showid,oid) values (?,?,?,?,?)";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(movieTicket.getPrice());
             arr.add(movieTicket.getFilmId());
             arr.add(movieTicket.getSeatId());
@@ -60,7 +60,7 @@ public class MovieTicketRepository implements IMovieTicketRepository {
         try{
             String sql = "update movietickets set price =?, fid =?, seid =?, showid =?, oid =? where id =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(movieTicket.getPrice());
             arr.add(movieTicket.getFilmId());
             arr.add(movieTicket.getSeatId());
@@ -82,7 +82,7 @@ public class MovieTicketRepository implements IMovieTicketRepository {
         try{
             String sql ="delete from movietickets where id =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(movieTicket.getId());
             if(conn.execute(sql,arr)){
                 return true;
@@ -98,7 +98,7 @@ public class MovieTicketRepository implements IMovieTicketRepository {
         try{
             String sql ="select * from movietickets where id =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(id);
             ResultSet rs = conn.executeQuery(sql,arr);
             while (rs.next()){
@@ -122,7 +122,7 @@ public class MovieTicketRepository implements IMovieTicketRepository {
         try{
             String sql="select * from movietickets where fid=? and showid=?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(film.getId());
             arr.add(showTime.getId());
             ResultSet rs = conn.executeQuery(sql,arr);

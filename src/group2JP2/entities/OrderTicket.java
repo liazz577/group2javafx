@@ -1,12 +1,11 @@
 package group2JP2.entities;
 
-import javafx.scene.control.Button;
+
 
 public class OrderTicket {
-    public Integer id;
-    public Integer qty;
-    public Float totalMoney;
-//    public Button choose;
+   public Integer id;
+   public Integer qty;
+   public Float totalMoney;
 
     public OrderTicket() {
     }
@@ -15,7 +14,6 @@ public class OrderTicket {
         this.id = id;
         this.qty = qty;
         this.totalMoney = totalMoney;
-//        this.choose = new Button("Edit");
     }
 
     public Integer getId() {
@@ -41,8 +39,4 @@ public class OrderTicket {
     public void setTotalMoney(Float totalMoney) {
         this.totalMoney = totalMoney;
     }
-
-//    public Button getChoose() {
-//        return choose;
-//    }
 }

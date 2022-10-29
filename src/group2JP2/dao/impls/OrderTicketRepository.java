@@ -31,19 +31,21 @@ public class OrderTicketRepository implements IOrderTicketRepository {
 
     @Override
     public boolean create(OrderTicket orderTicket) {
-        try{
-            String sql ="insert into orderticket(qtyticket, totalmoney) values(?,?)";
-            Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
-            arr.add(orderTicket.getQty());
-            arr.add(orderTicket.getTotalMoney());
-            if(conn.execute(sql,arr)){
-                return true;
-            }
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-        return false;
+      try{
+          String sql = "insert into orderticket(qtyticket,totalmoney) values(?,?)";
+          Connector conn = Connector.getInstance();
+          ArrayList arr = new ArrayList();
+          arr.add(orderTicket.getQty());
+          arr.add(orderTicket.getTotalMoney());
+          if(conn.execute(sql,arr)){
+              return true;
+          }
+
+      }catch (Exception e){
+          System.out.println(e.getMessage());
+      }
+      return false;
+
     }
 
     @Override
@@ -51,7 +53,7 @@ public class OrderTicketRepository implements IOrderTicketRepository {
         try{
             String sql ="update orderticket set qtyticket =?,totalmoney =? where oid =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(orderTicket.getQty());
             arr.add(orderTicket.getTotalMoney());
             arr.add(orderTicket.getId());
@@ -70,7 +72,7 @@ public class OrderTicketRepository implements IOrderTicketRepository {
         try{
             String sql ="delete from orderticket where oid =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(orderTicket.getId());
             if(conn.execute(sql,arr)){
                 return true;
@@ -86,7 +88,7 @@ public class OrderTicketRepository implements IOrderTicketRepository {
         try{
             String sql= "select * from orderticket where oid =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(id);
             ResultSet rs = conn.executeQuery(sql,arr);
             while (rs.next()){
