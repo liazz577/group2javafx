@@ -9,7 +9,7 @@ public class Seat {
     public Seat() {
     }
 
-    public Seat(Integer id, String name, Integer roomId, Integer tsId) {
+    public Seat(Integer id, String name, Integer tsId, Integer roomId) {
         this.id = id;
         this.name = name;
         this.roomId = roomId;

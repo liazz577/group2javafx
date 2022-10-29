@@ -53,9 +53,6 @@ public class MovieTicket {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Float getPrice() {
         return price;
@@ -69,17 +66,12 @@ public class MovieTicket {
         return filmId;
     }
 
-    public void setFilmId(Integer filmId) {
-        this.filmId = filmId;
-    }
 
     public Integer getShowTimeId() {
         return showTimeId;
     }
 
-    public void setShowTimeId(Integer showTimeId) {
-        this.showTimeId = showTimeId;
-    }
+
     public ShowTime showTime(){
         ShowTimeRepository str = new ShowTimeRepository();
         return str.findOne(this.getShowTimeId());
@@ -101,10 +93,6 @@ public class MovieTicket {
 
     }
 
-    public void setSeatId(Integer seatId) {
-        this.seatId = seatId;
-    }
-
     public Integer getOrderId() {
         return orderId;
     }
@@ -117,34 +105,21 @@ public class MovieTicket {
         return this.film().getName();
     }
 
-    public void setNameFilm(String nameFilm) {
-
-        this.nameFilm = nameFilm;
-    }
-
     public Seat seat(){
         SeatRepository sr = new SeatRepository();
         return sr.findOne(this.getSeatId());
+    }
+
+    public String getNameSeat() {
+        return this.seat().getName();
     }
     public Room room(){
         RoomRepository rr = new RoomRepository();
         return rr.findOne(this.seat().getRoomId());
     }
 
-    public String getNameSeat() {
-        return this.seat().getName();
-    }
-
-    public void setNameSeat(String nameSeat) {
-        this.nameSeat = nameSeat;
-    }
-
     public String getNameRoom() {
         return this.room().getName();
-    }
-
-    public void setNameRoom(String nameRoom) {
-        this.nameRoom = nameRoom;
     }
 
     public Button getChoose() {

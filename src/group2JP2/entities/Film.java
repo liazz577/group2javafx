@@ -2,6 +2,8 @@ package group2JP2.entities;
 
 import group2JP2.Main;
 import group2JP2.dao.impls.FilmRepository;
+import group2JP2.enums.RepoType;
+import group2JP2.factory.RepositoryFactory;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -102,7 +104,7 @@ public class Film {
     }
 
     public ArrayList<ShowTime> showFilm(){
-        FilmRepository fr = new FilmRepository();
+        FilmRepository fr = (FilmRepository) RepositoryFactory.creatRepository(RepoType.FILM);
         return fr.findShow(this);
     }
 

@@ -47,7 +47,7 @@ public class TypeOfSeatRepository implements ITypeOfSeatRepository {
         try{
             String sql ="select * from typeofseats where tsid =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(id);
             ResultSet rs = conn.executeQuery(sql,arr);
             while (rs.next()){

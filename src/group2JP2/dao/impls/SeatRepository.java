@@ -53,7 +53,7 @@ public class SeatRepository implements ISeatRepository {
         try{
             String sql ="select * from seats where sid =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(id);
             ResultSet rs = conn.executeQuery(sql,arr);
             while (rs.next()){

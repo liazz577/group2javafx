@@ -50,7 +50,8 @@ public class TypeOfFilmRepository implements ITypeOfFilmRepository {
         try{
             String sql ="select * from typeoffilms where tfid =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
+            arr.add(id);
             ResultSet rs = conn.executeQuery(sql,arr);
             while (rs.next()){
                 return new TypeOfFilm(

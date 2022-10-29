@@ -49,7 +49,7 @@ public class RoomRepository implements IRoomRepository {
         try{
             String sql ="select * from rooms where rid =?";
             Connector conn = Connector.getInstance();
-            ArrayList arr = new ArrayList<>();
+            ArrayList arr = new ArrayList();
             arr.add(id);
             ResultSet rs = conn.executeQuery(sql,arr);
             while (rs.next()){
