@@ -23,6 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CreateOrderController implements Initializable {
@@ -38,7 +39,9 @@ public class CreateOrderController implements Initializable {
 
     public TextField txtTotalMoney;
     public TextField txtQtyTicket;
-    public static Integer oId = new Integer(100);
+
+
+
 
 
     public void goToMovieTicket(ActionEvent actionEvent) throws Exception {
@@ -62,11 +65,21 @@ public class CreateOrderController implements Initializable {
 
     public void createOrder(ActionEvent actionEvent){
         try{
+            OrderTicketRepository otr = new OrderTicketRepository();
+            ArrayList<OrderTicket> ls = new ArrayList<>();
+            ls.addAll(otr.all());
+             Integer t=Integer.valueOf(0);
+            for(int i=1;i<ls.size();i++){
+                if(ls.get(i).getId()>=ls.get(i-1).getId()){
+                    t = ls.get(i).getId();
+                }
+            }
             Integer total = Integer.parseInt(txtTotalMoney.getText());
             Integer qty = Integer.parseInt(txtQtyTicket.getText());
 
-            OrderTicket o = new OrderTicket(oId++,qty,total);
-            OrderTicketRepository otr = new OrderTicketRepository();
+            OrderTicket o = new OrderTicket(Integer.valueOf(t+1),qty,total);
+
+
             if(otr.create(o)){
                 System.out.println("Success");
             }else {

@@ -76,7 +76,8 @@ public class MovieTicket {
         this.deleteOutOrder.setOnAction(event -> {
             try{
                 if(OrderTicket.editedOrder!=null);{
-                    this.setOrderId(0);
+                    this.deleteOutOrder.setVisible(false);
+                    this.setOrderId(Integer.valueOf(0));
                     MovieTicketRepository mtr = new MovieTicketRepository();
                     if(mtr.update(this)){
                         System.out.println("Success");
@@ -84,18 +85,19 @@ public class MovieTicket {
                         System.out.println("Error");
                     }
                     OrderTicketRepository otr = new OrderTicketRepository();
-                    OrderTicket o = otr.findOne(this.getOrderId());
-                    o.setTotalMoney(o.getTotalMoney()-this.getPrice());
-                    if(otr.update(o)){
+                    OrderTicket.editedOrder.setQty(OrderTicket.editedOrder.getQty()-1);
+                    OrderTicket.editedOrder.setTotalMoney(OrderTicket.editedOrder.getTotalMoney()-this.getPrice());
+                    if(otr.update(OrderTicket.editedOrder)){
                         System.out.println("Done");
                     }else{
                         System.out.println("Lỗi rồi");
                     }
                     Parent edit = FXMLLoader.load(getClass().getResource("../orderticket/edit/edit.fxml"));
-                    Main.movieStage.setTitle("Edit"+o.getId());
+                    Main.movieStage.setTitle("Edit "+this.getId());
                     Main.movieStage.setScene(new Scene(edit,Main.width,Main.height));
 
                 }
+
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
@@ -193,7 +195,8 @@ public class MovieTicket {
 
     @Override
     public String toString() {
-        return "Id Ticket-" +id.toString()+"/Price-"+price.toString()+"\n";
+        return "Id Ticket-" +id.toString()+"/Price-"+price.toString()+"/Seat-"+getNameSeat()+"/Room-"+getNameRoom()+
+                "/Start-"+getStartShow()+"/End-"+getEndShow()+"\n";
 
     }
 }

@@ -17,6 +17,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class OrderListController implements Initializable {
@@ -43,7 +44,15 @@ public class OrderListController implements Initializable {
         tdAction.setCellValueFactory(new PropertyValueFactory<OrderTicket,Button>("edit"));
         ObservableList<OrderTicket> ls = FXCollections.observableArrayList();
         OrderTicketRepository otr = new OrderTicketRepository();
-        ls.addAll(otr.all());
+//        ls.addAll(otr.all());
+        ArrayList<OrderTicket> ooo = new ArrayList<>();
+        for(OrderTicket s: otr.all()){
+            if(s.getId()!=0&&s.getQty()!=0){
+                ooo.add(s);
+            }
+        }
+        ls.addAll(ooo);
+
         tbOrder.setItems(ls);
 
     }
