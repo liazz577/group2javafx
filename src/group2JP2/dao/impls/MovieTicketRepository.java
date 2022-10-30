@@ -3,9 +3,11 @@ package group2JP2.dao.impls;
 import group2JP2.dao.interfaces.IMovieTicketRepository;
 import group2JP2.entities.Film;
 import group2JP2.entities.MovieTicket;
+import group2JP2.entities.OrderTicket;
 import group2JP2.entities.ShowTime;
 import group2JP2.helper.Connector;
 
+import javax.lang.model.type.NullType;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -20,7 +22,7 @@ public class MovieTicketRepository implements IMovieTicketRepository {
             while (rs.next()){
                 ls.add(new MovieTicket(
                         rs.getInt("id"),
-                        rs.getFloat("price"),
+                        rs.getInt("price"),
                         rs.getInt("fid"),
                         rs.getInt("seid"),
                         rs.getInt("showid"),
@@ -58,13 +60,9 @@ public class MovieTicketRepository implements IMovieTicketRepository {
     @Override
     public boolean update(MovieTicket movieTicket) {
         try{
-            String sql = "update movietickets set price =?, fid =?, seid =?, showid =?, oid =? where id =?";
+            String sql = "update movietickets set oid =? where id =?";
             Connector conn = Connector.getInstance();
             ArrayList arr = new ArrayList();
-            arr.add(movieTicket.getPrice());
-            arr.add(movieTicket.getFilmId());
-            arr.add(movieTicket.getSeatId());
-            arr.add(movieTicket.getShowTimeId());
             arr.add(movieTicket.getOrderId());
             arr.add(movieTicket.getId());
             if(conn.execute(sql,arr)){
@@ -104,7 +102,7 @@ public class MovieTicketRepository implements IMovieTicketRepository {
             while (rs.next()){
                 return new MovieTicket(
                         rs.getInt("id"),
-                        rs.getFloat("price"),
+                        rs.getInt("price"),
                         rs.getInt("fid"),
                         rs.getInt("seid"),
                         rs.getInt("showid"),
@@ -120,16 +118,17 @@ public class MovieTicketRepository implements IMovieTicketRepository {
     public ArrayList<MovieTicket> findFilmShow(Film film, ShowTime showTime){
         ArrayList<MovieTicket> ls = new ArrayList<>();
         try{
-            String sql="select * from movietickets where fid=? and showid=?";
+            String sql="select * from movietickets where fid=? and showid=? and oid =?";
             Connector conn = Connector.getInstance();
             ArrayList arr = new ArrayList();
             arr.add(film.getId());
             arr.add(showTime.getId());
+            arr.add(0);
             ResultSet rs = conn.executeQuery(sql,arr);
             while (rs.next()){
                 ls.add(new MovieTicket(
                         rs.getInt("id"),
-                        rs.getFloat("price"),
+                        rs.getInt("price"),
                         rs.getInt("fid"),
                         rs.getInt("seid"),
                         rs.getInt("showid"),
@@ -141,4 +140,29 @@ public class MovieTicketRepository implements IMovieTicketRepository {
         }
         return ls;
     }
+
+    public ArrayList<MovieTicket> findFilmOrder(OrderTicket o){
+        ArrayList<MovieTicket> ls = new ArrayList<>();
+        try{
+            String sql="select * from movietickets where oid =?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(o.getId());
+            ResultSet rs = conn.executeQuery(sql,arr);
+            while (rs.next()){
+                ls.add(new MovieTicket(
+                        rs.getInt("id"),
+                        rs.getInt("price"),
+                        rs.getInt("fid"),
+                        rs.getInt("seid"),
+                        rs.getInt("showid"),
+                        rs.getInt("oid")
+                ));
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return ls;
+    }
+
 }

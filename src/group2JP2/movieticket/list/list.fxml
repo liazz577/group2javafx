@@ -27,5 +27,6 @@
         </columns>
       </TableView>
       <Button layoutX="666.0" layoutY="452.0" mnemonicParsing="false" onAction="#goToCreatOrder" text="Go To Bag" />
+      <Button onAction="#goToListOrder" layoutX="20.0" layoutY="452.0" mnemonicParsing="false" text="Go To List Order" />
    </children>
 </Pane>

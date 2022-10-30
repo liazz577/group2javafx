@@ -1,12 +1,13 @@
 package group2JP2.entities;
 
 
-import group2JP2.dao.impls.FilmRepository;
-import group2JP2.dao.impls.RoomRepository;
-import group2JP2.dao.impls.SeatRepository;
-import group2JP2.dao.impls.ShowTimeRepository;
+import group2JP2.Main;
+import group2JP2.dao.impls.*;
 import group2JP2.enums.RepoType;
 import group2JP2.factory.RepositoryFactory;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 import java.time.LocalDateTime;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 
 public class MovieTicket {
     public Integer id;
-    public Float price;
+    public Integer price;
     public Integer filmId;
     public Integer showTimeId;
     public Integer seatId;
@@ -25,26 +26,80 @@ public class MovieTicket {
     public String startShow;
     public String endShow;
     public Button choose;
+    public Button delete;
+    public Button deleteOutOrder;
     public static ArrayList<MovieTicket> selectMovieTicket = new ArrayList<>();
 
     public MovieTicket() {
     }
 
-    public MovieTicket(Integer id, Float price, Integer filmId, Integer seatId , Integer showTimeId , Integer orderId) {
+    public MovieTicket(Integer id, Integer price, Integer filmId, Integer seatId , Integer showTimeId , Integer orderId) {
         this.id = id;
         this.price = price;
         this.filmId = filmId;
         this.showTimeId = showTimeId;
         this.seatId = seatId;
         this.orderId = orderId;
+        this.delete = new Button("Delete");
         this.choose = new Button("AddToBag");
+        this.deleteOutOrder = new Button("DeleteOut");
         this.choose.setOnAction(event -> {
             try{
-                selectMovieTicket.add(this);
+                int k=0;
+                for(MovieTicket s:selectMovieTicket){
+                    if(s.getId()==this.getId()){
+                        k++;
+                    }
+                }
+                if(k==0){
+                    selectMovieTicket.add(this);
+                }
                 this.choose.setVisible(false);
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
+        });
+
+        this.delete.setOnAction(event -> {
+            try{
+                selectMovieTicket.remove(this);
+                this.delete.setVisible(false);
+                Parent re = FXMLLoader.load(getClass().getResource("../orderticket/create/create.fxml"));
+                Main.movieStage.setTitle("Create Order");
+                Main.movieStage.setScene(new Scene(re,Main.width,Main.height));
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+
+        });
+
+        this.deleteOutOrder.setOnAction(event -> {
+            try{
+                if(OrderTicket.editedOrder!=null);{
+                    this.setOrderId(0);
+                    MovieTicketRepository mtr = new MovieTicketRepository();
+                    if(mtr.update(this)){
+                        System.out.println("Success");
+                    }else {
+                        System.out.println("Error");
+                    }
+                    OrderTicketRepository otr = new OrderTicketRepository();
+                    OrderTicket o = otr.findOne(this.getOrderId());
+                    o.setTotalMoney(o.getTotalMoney()-this.getPrice());
+                    if(otr.update(o)){
+                        System.out.println("Done");
+                    }else{
+                        System.out.println("Lỗi rồi");
+                    }
+                    Parent edit = FXMLLoader.load(getClass().getResource("../orderticket/edit/edit.fxml"));
+                    Main.movieStage.setTitle("Edit"+o.getId());
+                    Main.movieStage.setScene(new Scene(edit,Main.width,Main.height));
+
+                }
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+
         });
 
     }
@@ -54,11 +109,11 @@ public class MovieTicket {
     }
 
 
-    public Float getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
@@ -118,11 +173,27 @@ public class MovieTicket {
         return rr.findOne(this.seat().getRoomId());
     }
 
+
     public String getNameRoom() {
         return this.room().getName();
     }
 
+
     public Button getChoose() {
         return choose;
+    }
+
+    public Button getDelete() {
+        return delete;
+    }
+
+    public Button getDeleteOutOrder() {
+        return deleteOutOrder;
+    }
+
+    @Override
+    public String toString() {
+        return "Id Ticket-" +id.toString()+"/Price-"+price.toString()+"\n";
+
     }
 }

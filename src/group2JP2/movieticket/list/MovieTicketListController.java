@@ -27,7 +27,7 @@ public class MovieTicketListController implements Initializable {
     public TableColumn<MovieTicket,String> tdNameFilm;
     public TableColumn<MovieTicket, LocalDateTime> tdStarShow;
     public TableColumn<MovieTicket,LocalDateTime> tdEndShow;
-    public TableColumn<MovieTicket,Integer> tdSeatName;
+    public TableColumn<MovieTicket,String> tdSeatName;
     public TableColumn<MovieTicket,String> tdRoomName;
     public TableColumn<MovieTicket,Float> tdPrice;
     public TableColumn<MovieTicket, Button> tdAction;
@@ -51,13 +51,14 @@ public class MovieTicketListController implements Initializable {
             tdNameFilm.setCellValueFactory(new PropertyValueFactory<MovieTicket,String>("nameFilm"));
             tdStarShow.setCellValueFactory(new PropertyValueFactory<MovieTicket,LocalDateTime>("startShow"));
             tdEndShow.setCellValueFactory(new PropertyValueFactory<MovieTicket,LocalDateTime>("endShow"));
-            tdSeatName.setCellValueFactory(new PropertyValueFactory<MovieTicket,Integer>("seatId"));
+            tdSeatName.setCellValueFactory(new PropertyValueFactory<MovieTicket,String>("nameSeat"));
             tdRoomName.setCellValueFactory(new PropertyValueFactory<MovieTicket,String>("nameRoom"));
             tdPrice.setCellValueFactory(new PropertyValueFactory<MovieTicket,Float>("price"));
             tdAction.setCellValueFactory(new PropertyValueFactory<MovieTicket,Button>("choose"));
             ObservableList<MovieTicket> ls = FXCollections.observableArrayList();
             MovieTicketRepository mtr = new MovieTicketRepository();
             ls.addAll(mtr.findFilmShow(Film.selectFilm,ShowTime.selectShowTime));
+
             tbMovieTicket.setItems(ls);
         }
     }
@@ -66,5 +67,11 @@ public class MovieTicketListController implements Initializable {
         Parent creatOrder = FXMLLoader.load(getClass().getResource("../../orderticket/create/create.fxml"));
         Main.movieStage.setTitle("Create Order");
         Main.movieStage.setScene(new Scene(creatOrder,Main.width,Main.height));
+    }
+
+    public void goToListOrder(ActionEvent actionEvent) throws Exception {
+        Parent listOrder = FXMLLoader.load(getClass().getResource("../../orderticket/list/list.fxml"));
+        Main.movieStage.setTitle("List Order");
+        Main.movieStage.setScene(new Scene(listOrder,Main.width,Main.height));
     }
 }

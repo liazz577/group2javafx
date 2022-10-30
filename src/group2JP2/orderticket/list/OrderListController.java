@@ -2,6 +2,7 @@ package group2JP2.orderticket.list;
 
 import group2JP2.Main;
 import group2JP2.dao.impls.OrderTicketRepository;
+import group2JP2.entities.MovieTicket;
 import group2JP2.entities.OrderTicket;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,8 +24,9 @@ public class OrderListController implements Initializable {
     public TableView<OrderTicket> tbOrder;
     public TableColumn<OrderTicket,Integer> tdOrderId;
     public TableColumn<OrderTicket,Integer> tdQtyTicket;
-    public TableColumn<OrderTicket,Float> tdTotalMoney;
+    public TableColumn<OrderTicket,Integer> tdTotalMoney;
     public TableColumn<OrderTicket, Button> tdAction;
+    public TableColumn<OrderTicket,String> tdMovieTicket;
 
     public void goToHome(ActionEvent actionEvent) throws Exception {
         Parent home = FXMLLoader.load(getClass().getResource("../../home.fxml"));
@@ -36,8 +38,9 @@ public class OrderListController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         tdOrderId.setCellValueFactory(new PropertyValueFactory<OrderTicket,Integer>("id"));
         tdQtyTicket.setCellValueFactory(new PropertyValueFactory<OrderTicket,Integer>("qty"));
-        tdTotalMoney.setCellValueFactory(new PropertyValueFactory<OrderTicket,Float>("totalMoney"));
-        tdAction.setCellValueFactory(new PropertyValueFactory<OrderTicket,Button>("choose"));
+        tdTotalMoney.setCellValueFactory(new PropertyValueFactory<OrderTicket,Integer>("totalMoney"));
+        tdMovieTicket.setCellValueFactory(new PropertyValueFactory<OrderTicket,String>("nameMovieTicket"));
+        tdAction.setCellValueFactory(new PropertyValueFactory<OrderTicket,Button>("edit"));
         ObservableList<OrderTicket> ls = FXCollections.observableArrayList();
         OrderTicketRepository otr = new OrderTicketRepository();
         ls.addAll(otr.all());

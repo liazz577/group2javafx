@@ -3,8 +3,9 @@ package group2JP2.entities;
 public class Seat {
     public Integer id;
     public String name;
-    public Integer roomId;
     public Integer tsId;
+    public Integer roomId;
+
 
     public Seat() {
     }

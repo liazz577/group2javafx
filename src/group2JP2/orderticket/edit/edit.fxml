@@ -5,14 +5,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.orderticket.create.CreateOrderController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.orderticket.edit.EditOrderController">
    <children>
       <Text fill="#7381eb" layoutX="194.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE ORDER TICKET">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <Button layoutX="17.0" layoutY="113.0" mnemonicParsing="false" onAction="#goToMovieTicket" text="&lt;&lt;Back" />
+
       <Button layoutX="640.0" layoutY="113.0" mnemonicParsing="false" onAction="#goToHome" text="Go To List Film" />
       <TableView fx:id="tbMovieTicket" layoutX="17.0" layoutY="169.0" prefHeight="253.0" prefWidth="718.0">
         <columns>
@@ -39,6 +39,6 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button layoutX="653.0" layoutY="496.0" mnemonicParsing="false" onAction="#createOrder" text="Create Order" />
+      <Button layoutX="653.0" layoutY="496.0" mnemonicParsing="false" onAction="#editOrder" text="Edit Order" />
    </children>
 </Pane>

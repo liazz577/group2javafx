@@ -104,7 +104,7 @@ public class Film {
     }
 
     public ArrayList<ShowTime> showFilm(){
-        FilmRepository fr = (FilmRepository) RepositoryFactory.creatRepository(RepoType.FILM);
+        FilmRepository fr = new FilmRepository();
         return fr.findShow(this);
     }
 

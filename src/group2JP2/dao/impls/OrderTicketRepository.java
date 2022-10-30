@@ -19,7 +19,7 @@ public class OrderTicketRepository implements IOrderTicketRepository {
                 ls.add(new OrderTicket(
                         rs.getInt("oid"),
                         rs.getInt("qtyticket"),
-                        rs.getFloat("totalmoney")
+                        rs.getInt("totalmoney")
                 ));
             }
 
@@ -32,9 +32,10 @@ public class OrderTicketRepository implements IOrderTicketRepository {
     @Override
     public boolean create(OrderTicket orderTicket) {
       try{
-          String sql = "insert into orderticket(qtyticket,totalmoney) values(?,?)";
+          String sql = "insert into orderticket(oid,qtyticket,totalmoney) values(?,?,?)";
           Connector conn = Connector.getInstance();
           ArrayList arr = new ArrayList();
+          arr.add(orderTicket.getId());
           arr.add(orderTicket.getQty());
           arr.add(orderTicket.getTotalMoney());
           if(conn.execute(sql,arr)){
@@ -95,7 +96,7 @@ public class OrderTicketRepository implements IOrderTicketRepository {
                 return new OrderTicket(
                         rs.getInt("oid"),
                         rs.getInt("qtyseat"),
-                        rs.getFloat("totalmoney")
+                        rs.getInt("totalmoney")
                 );
             }
 
