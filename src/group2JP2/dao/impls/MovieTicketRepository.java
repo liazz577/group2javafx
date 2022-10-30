@@ -6,8 +6,6 @@ import group2JP2.entities.MovieTicket;
 import group2JP2.entities.OrderTicket;
 import group2JP2.entities.ShowTime;
 import group2JP2.helper.Connector;
-
-import javax.lang.model.type.NullType;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
