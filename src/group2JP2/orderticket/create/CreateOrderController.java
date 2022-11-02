@@ -124,6 +124,8 @@ public class CreateOrderController implements Initializable {
                 t+=s.getPrice();
             }
             txtTotalMoney.setText(t.toString());
+            txtTotalMoney.setEditable(false);
+            txtQtyTicket.setEditable(false);
 
 
         }

@@ -77,7 +77,7 @@ public class MovieTicket {
             try{
                 if(OrderTicket.editedOrder!=null);{
                     this.deleteOutOrder.setVisible(false);
-                    this.setOrderId(Integer.valueOf(0));
+                    this.setOrderId(null);
                     MovieTicketRepository mtr = new MovieTicketRepository();
                     if(mtr.update(this)){
                         System.out.println("Success");
