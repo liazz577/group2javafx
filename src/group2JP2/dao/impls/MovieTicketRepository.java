@@ -116,12 +116,12 @@ public class MovieTicketRepository implements IMovieTicketRepository {
     public ArrayList<MovieTicket> findFilmShow(Film film, ShowTime showTime){
         ArrayList<MovieTicket> ls = new ArrayList<>();
         try{
-            String sql="select * from movietickets where fid=? and showid=? and oid =?";
+            String sql="select * from movietickets where fid=? and showid=? and oid is null";
             Connector conn = Connector.getInstance();
             ArrayList arr = new ArrayList();
             arr.add(film.getId());
             arr.add(showTime.getId());
-            arr.add(0);
+//            arr.add(0);
             ResultSet rs = conn.executeQuery(sql,arr);
             while (rs.next()){
                 ls.add(new MovieTicket(

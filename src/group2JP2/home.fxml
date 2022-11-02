@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.HomeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.HomeController">
    <children>
-      <Text fill="#944646" layoutX="252.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LIST FILM">
+      <Text fill="#b81818" layoutX="441.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LIST FILM" textAlignment="CENTER" wrappingWidth="374.89453125">
          <font>
-            <Font size="36.0" />
+            <Font name="Wide Latin" size="36.0" />
          </font>
       </Text>
-      <TableView fx:id="tbFilm" layoutX="11.0" layoutY="120.0" prefHeight="308.0" prefWidth="631.0">
+      <TableView fx:id="tbFilm" layoutX="12.0" layoutY="120.0" prefHeight="308.0" prefWidth="1229.0">
         <columns>
-          <TableColumn fx:id="tdId" prefWidth="54.0" text="Id" />
-          <TableColumn fx:id="tdName" prefWidth="125.0" text="Name" />
-            <TableColumn fx:id="tdAuthor" prefWidth="119.0" text="Author" />
-            <TableColumn fx:id="tdTime" prefWidth="65.0" text="Time" />
-            <TableColumn fx:id="tdContent" prefWidth="128.0" text="Content" />
-            <TableColumn fx:id="tdType" prefWidth="78.0" text="Type" />
-            <TableColumn fx:id="tdAction" prefWidth="61.0" text="Action" />
+          <TableColumn fx:id="tdId" prefWidth="27.0" text="Id" />
+          <TableColumn fx:id="tdName" prefWidth="170.0" text="Name" />
+            <TableColumn fx:id="tdAuthor" prefWidth="132.0" text="Author" />
+            <TableColumn fx:id="tdTime" prefWidth="57.0" text="Time" />
+            <TableColumn fx:id="tdContent" prefWidth="529.0" text="Content" />
+            <TableColumn fx:id="tdType" prefWidth="204.0" text="Type" />
+            <TableColumn fx:id="tdAction" prefWidth="109.0" text="Action" />
         </columns>
       </TableView>
    </children>

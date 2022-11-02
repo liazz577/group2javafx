@@ -8,8 +8,8 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     public static Stage movieStage;
-    public static Integer width = 1000;
-    public static Integer height = 1000;
+    public static Integer width = 1250;
+    public static Integer height = 800;
     @Override
     public void start(Stage primaryStage) throws Exception {
         movieStage = primaryStage;
