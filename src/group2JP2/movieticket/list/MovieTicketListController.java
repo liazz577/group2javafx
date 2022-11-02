@@ -58,8 +58,20 @@ public class MovieTicketListController implements Initializable {
             ObservableList<MovieTicket> ls = FXCollections.observableArrayList();
             MovieTicketRepository mtr = new MovieTicketRepository();
             ls.addAll(mtr.findFilmShow(Film.selectFilm,ShowTime.selectShowTime));
+            ObservableList<MovieTicket> li = FXCollections.observableArrayList();
+            for(MovieTicket s:ls){
+                int k=0;
+                for(int i=0;i<MovieTicket.selectMovieTicket.size();i++){
+                   if(s.getId()==MovieTicket.selectMovieTicket.get(i).getId()){
+                       k++;
+                   }
 
-            tbMovieTicket.setItems(ls);
+                }
+                if(k==0){
+                    li.add(s);
+                }
+            }
+            tbMovieTicket.setItems(li);
         }
     }
 
