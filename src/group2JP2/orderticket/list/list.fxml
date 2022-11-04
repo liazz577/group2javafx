@@ -16,12 +16,12 @@
             <TableColumn fx:id="tdAction" prefWidth="87.0" text="Action" />
         </columns>
       </TableView>
-      <Text fill="#b81818" layoutX="470.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List Order">
+      <Text fill="#b81818e0" layoutX="470.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List Order">
          <font>
             <Font name="Wide Latin" size="36.0" />
          </font>
       </Text>
-      <Button layoutX="146.0" layoutY="96.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="42.0" text="Go To List Fim" textFill="#b81818">
+      <Button layoutX="146.0" layoutY="96.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="42.0" text="Go To List Fim" textFill="#b81818e0">
          <font>
             <Font name="Franklin Gothic Heavy" size="16.0" />
          </font></Button>

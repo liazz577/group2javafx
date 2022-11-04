@@ -7,16 +7,16 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.orderticket.create.CreateOrderController">
    <children>
-      <Text fill="#b81818" layoutX="207.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE ORDER TICKET">
+      <Text fill="#b81818e0" layoutX="207.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE ORDER TICKET" textAlignment="CENTER">
          <font>
             <Font name="Wide Latin" size="36.0" />
          </font>
       </Text>
-      <Button layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#goToMovieTicket" prefHeight="42.0" text="&lt;&lt;Back" textAlignment="CENTER" textFill="#b81818">
+      <Button layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#goToMovieTicket" prefHeight="42.0" text="&lt;&lt;Back" textAlignment="CENTER" textFill="#b81818e0">
          <font>
             <Font name="Franklin Gothic Heavy" size="16.0" />
          </font></Button>
-      <Button layoutX="102.0" layoutY="90.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="42.0" text="Go To List Film" textFill="#b81818">
+      <Button layoutX="102.0" layoutY="90.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="42.0" text="Go To List Film" textFill="#b81818e0">
          <font>
             <Font name="Franklin Gothic Heavy" size="16.0" />
          </font></Button>
@@ -33,18 +33,18 @@
         </columns>
       </TableView>
       <TextField fx:id="txtTotalMoney" layoutX="1056.0" layoutY="496.0" />
-      <Text fill="#b81818" fontSmoothingType="LCD" layoutX="942.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Money" textAlignment="CENTER">
+      <Text fill="#b81818e3" fontSmoothingType="LCD" layoutX="942.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Money" textAlignment="CENTER">
          <font>
             <Font name="Franklin Gothic Heavy" size="18.0" />
          </font>
       </Text>
       <TextField fx:id="txtQtyTicket" layoutX="1056.0" layoutY="459.0" />
-      <Text fill="#b81818" fontSmoothingType="LCD" layoutX="942.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty Ticket" textAlignment="CENTER">
+      <Text fill="#b81818e0" fontSmoothingType="LCD" layoutX="942.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty Ticket" textAlignment="CENTER">
          <font>
             <Font name="Franklin Gothic Heavy" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="1123.0" layoutY="535.0" mnemonicParsing="false" onAction="#createOrder" prefHeight="42.0" text="Create Order" textFill="#b81818">
+      <Button layoutX="1123.0" layoutY="535.0" mnemonicParsing="false" onAction="#createOrder" prefHeight="42.0" text="Create Order" textFill="#b81818e0">
          <font>
             <Font name="Franklin Gothic Heavy" size="16.0" />
          </font></Button>
