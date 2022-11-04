@@ -7,7 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.showtime.list.ShowTimeListController">
    <children>
-      <Text fill="#b81818" layoutX="432.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SHOWTIME" textAlignment="CENTER">
+      <Text fill="#b81818" layoutX="429.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SHOWTIME" textAlignment="CENTER">
          <font>
             <Font name="Wide Latin" size="36.0" />
          </font>
