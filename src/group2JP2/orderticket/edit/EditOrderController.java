@@ -60,6 +60,7 @@ public class EditOrderController implements Initializable {
         tdSeatName.setCellValueFactory(new PropertyValueFactory<MovieTicket,String>("nameSeat"));
         tdRoomName.setCellValueFactory(new PropertyValueFactory<MovieTicket,String>("nameRoom"));
         tdPrice.setCellValueFactory(new PropertyValueFactory<MovieTicket,Integer>("price"));
+//        tdAction.setCellValueFactory(new PropertyValueFactory<MovieTicket,Button>("deleteOutOrder"));
         ObservableList<MovieTicket> ls = FXCollections.observableArrayList();
         MovieTicketRepository mtr = new MovieTicketRepository();
         ls.addAll(mtr.findFilmOrder(OrderTicket.editedOrder));
