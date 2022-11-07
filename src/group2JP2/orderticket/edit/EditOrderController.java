@@ -71,5 +71,7 @@ public class EditOrderController implements Initializable {
             t+=s.getPrice();
         }
         txtTotalMoney.setText(t.toString());
+        txtQtyTicket.setEditable(false);
+        txtTotalMoney.setEditable(false);
     }
 }
