@@ -41,9 +41,6 @@ public class CreateOrderController implements Initializable {
     public TextField txtQtyTicket;
 
 
-
-
-
     public void goToMovieTicket(ActionEvent actionEvent) throws Exception {
         Parent listMovieTicket = FXMLLoader.load(getClass().getResource("../../movieticket/list/list.fxml"));
         Main.movieStage.setTitle("List Movie Ticket");

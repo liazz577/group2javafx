@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.orderticket.edit.EditOrderController">
    <children>
-      <Text fill="#b81818e0" layoutX="404.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ORDER DETAILS" textAlignment="CENTER">
+      <Text fill="#b81818e0" layoutX="235.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ORDER INFORMATION" textAlignment="CENTER">
          <font>
             <Font name="Wide Latin" size="36.0" />
          </font>
@@ -21,13 +21,12 @@
       <TableView fx:id="tbMovieTicket" layoutX="14.0" layoutY="159.0" prefHeight="308.0" prefWidth="1229.0">
         <columns>
           <TableColumn fx:id="tdIdTicket" prefWidth="82.0" text="IdTicket" />
-          <TableColumn fx:id="tdNameFilm" prefWidth="295.0" text="Name Of Film" />
-            <TableColumn fx:id="tdStarShow" prefWidth="199.0" text="Start Show" />
-            <TableColumn fx:id="tdEndShow" prefWidth="206.0" text="End Show" />
-            <TableColumn fx:id="tdSeatName" prefWidth="120.0" text="Seat" />
-            <TableColumn fx:id="tdRoomName" prefWidth="108.0" text="Room" />
-            <TableColumn fx:id="tdPrice" prefWidth="138.0" text="Price" />
-            <TableColumn fx:id="tdAction" text="Action" />
+          <TableColumn fx:id="tdNameFilm" prefWidth="307.0" text="Name Of Film" />
+            <TableColumn fx:id="tdStarShow" prefWidth="206.0" text="Start Show" />
+            <TableColumn fx:id="tdEndShow" prefWidth="236.0" text="End Show" />
+            <TableColumn fx:id="tdSeatName" prefWidth="148.0" text="Seat" />
+            <TableColumn fx:id="tdRoomName" prefWidth="141.0" text="Room" />
+            <TableColumn fx:id="tdPrice" prefWidth="107.0" text="Price" />
         </columns>
       </TableView>
       <TextField fx:id="txtTotalMoney" layoutX="1056.0" layoutY="514.0" />

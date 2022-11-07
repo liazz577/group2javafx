@@ -20,16 +20,16 @@
          <font>
             <Font name="Franklin Gothic Heavy" size="16.0" />
          </font></Button>
-      <TableView fx:id="tbMovieTicket" layoutX="14.0" layoutY="144.0" prefHeight="308.0" prefWidth="1229.0">
+      <TableView fx:id="tbMovieTicket" layoutX="14.0" layoutY="140.0" prefHeight="308.0" prefWidth="1229.0">
         <columns>
-          <TableColumn fx:id="tdIdTicket" prefWidth="82.0" text="IdTicket" />
-          <TableColumn fx:id="tdNameFilm" prefWidth="240.0" text="Name Of Film" />
-            <TableColumn fx:id="tdStarShow" prefWidth="200.0" text="Start Show" />
-            <TableColumn fx:id="tdEndShow" prefWidth="202.0" text="End Show" />
-            <TableColumn fx:id="tdSeatName" prefWidth="121.0" text="Seat" />
-            <TableColumn fx:id="tdRoomName" prefWidth="115.0" text="Room" />
-            <TableColumn fx:id="tdPrice" prefWidth="147.0" text="Price" />
-            <TableColumn fx:id="tdAction" prefWidth="121.0" text="Action" />
+          <TableColumn fx:id="tdIdTicket" prefWidth="69.0" text="IdTicket" />
+          <TableColumn fx:id="tdNameFilm" prefWidth="326.0" text="Name Of Film" />
+            <TableColumn fx:id="tdStarShow" prefWidth="161.0" text="Start Show" />
+            <TableColumn fx:id="tdEndShow" prefWidth="187.0" text="End Show" />
+            <TableColumn fx:id="tdSeatName" prefWidth="113.0" text="Seat" />
+            <TableColumn fx:id="tdRoomName" prefWidth="107.0" text="Room" />
+            <TableColumn fx:id="tdPrice" prefWidth="122.0" text="Price" />
+            <TableColumn fx:id="tdAction" prefWidth="143.0" text="Action" />
         </columns>
       </TableView>
       <TextField fx:id="txtTotalMoney" layoutX="1056.0" layoutY="496.0" />

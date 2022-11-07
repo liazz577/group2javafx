@@ -27,7 +27,7 @@ public class OrderTicket {
         this.id = id;
         this.qty = qty;
         this.totalMoney = totalMoney;
-        this.edit = new Button("Detail");
+        this.edit = new Button("More");
         this.edit.setOnAction(event -> {
             try{
                 editedOrder = this;
