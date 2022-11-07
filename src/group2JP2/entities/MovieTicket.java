@@ -25,6 +25,7 @@ public class MovieTicket {
     public String nameRoom;
     public String startShow;
     public String endShow;
+    public String typeSeat;
     public Button choose;
     public Button delete;
     public Button deleteOutOrder;
@@ -198,5 +199,9 @@ public class MovieTicket {
         return "Id Ticket-" +id.toString()+"/Price-"+price.toString()+"/Seat-"+getNameSeat()+"/Room-"+getNameRoom()+
                 "/Start-"+getStartShow()+"/End-"+getEndShow()+"\n";
 
+    }
+    public String getTypeSeat() {
+        TypeOfSeatRepository tsr = new TypeOfSeatRepository();
+        return tsr.findOne(this.seat().getTsId()).getName();
     }
 }

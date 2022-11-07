@@ -31,6 +31,7 @@ public class MovieTicketListController implements Initializable {
     public TableColumn<MovieTicket,String> tdRoomName;
     public TableColumn<MovieTicket,Float> tdPrice;
     public TableColumn<MovieTicket, Button> tdAction;
+    public TableColumn<MovieTicket,String> tdTypeSeat;
 
     public void goToListShow(ActionEvent actionEvent) throws Exception {
         Parent listShow = FXMLLoader.load(getClass().getResource("../../showtime/list/list.fxml"));
@@ -54,6 +55,7 @@ public class MovieTicketListController implements Initializable {
             tdSeatName.setCellValueFactory(new PropertyValueFactory<MovieTicket,String>("nameSeat"));
             tdRoomName.setCellValueFactory(new PropertyValueFactory<MovieTicket,String>("nameRoom"));
             tdPrice.setCellValueFactory(new PropertyValueFactory<MovieTicket,Float>("price"));
+            tdTypeSeat.setCellValueFactory(new PropertyValueFactory<>("typeSeat"));
             tdAction.setCellValueFactory(new PropertyValueFactory<MovieTicket,Button>("choose"));
             ObservableList<MovieTicket> ls = FXCollections.observableArrayList();
             MovieTicketRepository mtr = new MovieTicketRepository();

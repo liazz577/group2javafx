@@ -20,18 +20,19 @@
          <font>
             <Font name="Franklin Gothic Heavy" size="16.0" />
          </font></Button>
-      <TableView fx:id="tbMovieTicket" layoutX="14.0" layoutY="124.0" prefHeight="308.0" prefWidth="1229.0">
-        <columns>
-          <TableColumn fx:id="tdIdTicket" prefWidth="82.0" text="IdTicket" />
-          <TableColumn fx:id="tdNameFilm" prefWidth="220.0" text="Name Of Film" />
-            <TableColumn fx:id="tdStarShow" prefWidth="204.0" text="Start Show" />
-            <TableColumn fx:id="tdEndShow" prefWidth="205.0" text="End Show" />
-            <TableColumn fx:id="tdSeatName" prefWidth="141.0" text="Seat" />
-            <TableColumn fx:id="tdRoomName" prefWidth="141.0" text="Room" />
-            <TableColumn fx:id="tdPrice" prefWidth="104.0" text="Price" />
-            <TableColumn fx:id="tdAction" prefWidth="148.0" text="Action" />
-        </columns>
-      </TableView>
+       <TableView fx:id="tbMovieTicket" layoutX="14.0" layoutY="124.0" prefHeight="308.0" prefWidth="1229.0">
+           <columns>
+               <TableColumn fx:id="tdIdTicket" prefWidth="82.0" text="IdTicket" />
+               <TableColumn fx:id="tdNameFilm" prefWidth="220.0" text="Name Of Film" />
+               <TableColumn fx:id="tdStarShow" prefWidth="204.0" text="Start Show" />
+               <TableColumn fx:id="tdEndShow" prefWidth="205.0" text="End Show" />
+               <TableColumn fx:id="tdSeatName" prefWidth="103.0" text="Seat" />
+               <TableColumn fx:id="tdRoomName" prefWidth="94.0" text="Room" />
+               <TableColumn fx:id="tdPrice" prefWidth="94.0" text="Price" />
+               <TableColumn fx:id="tdTypeSeat" prefWidth="119.0" text="Type Of Seat" />
+               <TableColumn fx:id="tdAction" prefWidth="107.0" text="Action" />
+           </columns>
+       </TableView>
       <Button layoutX="1146.0" layoutY="445.0" mnemonicParsing="false" onAction="#goToCreatOrder" prefHeight="42.0" text="Go To Bag" textFill="#b81818">
          <font>
             <Font name="Franklin Gothic Heavy" size="16.0" />
