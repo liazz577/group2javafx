@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.orderticket.edit.EditOrderController">
    <children>
-      <Text fill="#b81818e0" layoutX="404.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDIT ORDER" textAlignment="CENTER">
+      <Text fill="#b81818e0" layoutX="404.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ORDER DETAILS" textAlignment="CENTER">
          <font>
             <Font name="Wide Latin" size="36.0" />
          </font>
