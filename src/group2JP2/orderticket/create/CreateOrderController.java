@@ -74,7 +74,11 @@ public class CreateOrderController implements Initializable {
             Integer total = Integer.parseInt(txtTotalMoney.getText());
             Integer qty = Integer.parseInt(txtQtyTicket.getText());
 
-            OrderTicket o = new OrderTicket(Integer.valueOf(t+1),qty,total);
+            String s1 =LocalDateTime.now().toString().substring(0,11);
+            String s2 = LocalDateTime.now().toString().substring(11,21);
+            String s3 = s1+s2;
+
+            OrderTicket o = new OrderTicket(Integer.valueOf(t+1),qty,total,s3);
 
 
             if(otr.create(o)){

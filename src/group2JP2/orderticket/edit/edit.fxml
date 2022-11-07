@@ -22,11 +22,12 @@
         <columns>
           <TableColumn fx:id="tdIdTicket" prefWidth="82.0" text="IdTicket" />
           <TableColumn fx:id="tdNameFilm" prefWidth="307.0" text="Name Of Film" />
-            <TableColumn fx:id="tdStarShow" prefWidth="206.0" text="Start Show" />
-            <TableColumn fx:id="tdEndShow" prefWidth="236.0" text="End Show" />
-            <TableColumn fx:id="tdSeatName" prefWidth="148.0" text="Seat" />
-            <TableColumn fx:id="tdRoomName" prefWidth="141.0" text="Room" />
-            <TableColumn fx:id="tdPrice" prefWidth="107.0" text="Price" />
+            <TableColumn fx:id="tdStarShow" prefWidth="179.0" text="Start Show" />
+            <TableColumn fx:id="tdEndShow" prefWidth="183.0" text="End Show" />
+            <TableColumn fx:id="tdSeatName" prefWidth="134.0" text="Seat" />
+            <TableColumn fx:id="tdRoomName" prefWidth="153.0" text="Room" />
+            <TableColumn fx:id="tdPrice" prefWidth="117.0" text="Price" />
+            <TableColumn fx:id="tdAction" prefWidth="213.0" sortType="DESCENDING" text="Action" />
         </columns>
       </TableView>
       <TextField fx:id="txtTotalMoney" layoutX="1056.0" layoutY="514.0" />

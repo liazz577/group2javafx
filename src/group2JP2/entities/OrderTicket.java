@@ -17,17 +17,20 @@ public class OrderTicket {
    public Integer totalMoney;
    public Button edit;
    public String nameMovieTicket;
+    public String ngayLap;
+
    public static OrderTicket editedOrder;
 
 
     public OrderTicket() {
     }
 
-    public OrderTicket(Integer id, Integer qty, Integer totalMoney) {
+    public OrderTicket(Integer id, Integer qty, Integer totalMoney,String ngayLap) {
         this.id = id;
         this.qty = qty;
         this.totalMoney = totalMoney;
         this.edit = new Button("More");
+        this.ngayLap = ngayLap;
         this.edit.setOnAction(event -> {
             try{
                 editedOrder = this;
@@ -79,5 +82,13 @@ public class OrderTicket {
 
     public String getNameMovieTicket() {
         return findMovieTicket().toString();
+    }
+
+    public String getNgayLap() {
+        return ngayLap;
+    }
+
+    public void setNgayLap(String ngayLap) {
+        this.ngayLap = ngayLap;
     }
 }

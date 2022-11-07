@@ -28,6 +28,7 @@ public class OrderListController implements Initializable {
     public TableColumn<OrderTicket,Integer> tdTotalMoney;
     public TableColumn<OrderTicket, Button> tdAction;
     public TableColumn<OrderTicket,String> tdMovieTicket;
+    public TableColumn<OrderTicket,String> tdCreateDate;
 
     public void goToHome(ActionEvent actionEvent) throws Exception {
         Parent home = FXMLLoader.load(getClass().getResource("../../home.fxml"));
@@ -41,6 +42,7 @@ public class OrderListController implements Initializable {
         tdQtyTicket.setCellValueFactory(new PropertyValueFactory<OrderTicket,Integer>("qty"));
         tdTotalMoney.setCellValueFactory(new PropertyValueFactory<OrderTicket,Integer>("totalMoney"));
         tdMovieTicket.setCellValueFactory(new PropertyValueFactory<OrderTicket,String>("nameMovieTicket"));
+        tdCreateDate.setCellValueFactory(new PropertyValueFactory<>("ngayLap"));
         tdAction.setCellValueFactory(new PropertyValueFactory<OrderTicket,Button>("edit"));
         ObservableList<OrderTicket> ls = FXCollections.observableArrayList();
         OrderTicketRepository otr = new OrderTicketRepository();
