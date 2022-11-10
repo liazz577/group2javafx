@@ -66,5 +66,11 @@ public class ShowTime {
         return choose;
     }
 
-
+    @Override
+    public String toString() {
+        return "ShowTime{" +
+                "startShow=" + startShow +
+                ", endShow=" + endShow +
+                '}';
+    }
 }

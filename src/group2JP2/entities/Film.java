@@ -4,10 +4,14 @@ import group2JP2.Main;
 import group2JP2.dao.impls.FilmRepository;
 import group2JP2.enums.RepoType;
 import group2JP2.factory.RepositoryFactory;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import group2JP2.entities.ShowTime;
 
 import java.util.ArrayList;
 
@@ -18,6 +22,7 @@ public class Film {
     public String author;
     public Integer time;
     public String content;
+
     public Button choose;
     public String nameType;
     public static Film selectFilm;
@@ -37,8 +42,7 @@ public class Film {
             try{
                 selectFilm = this;
                 filmShow = this.showFilm();
-                Parent listShow = FXMLLoader.load(getClass().getResource("../showtime/list/list.fxml"));
-                Main.movieStage.setTitle("Show Time of"+this.getName());
+                Parent listShow = FXMLLoader.load(getClass().getResource("../home.fxml"));
                 Main.movieStage.setScene(new Scene(listShow,Main.width,Main.height));
             }catch (Exception e){
                 System.out.println(e.getMessage());

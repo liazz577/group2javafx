@@ -22,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -74,7 +75,7 @@ public class CreateOrderController implements Initializable {
             Integer total = Integer.parseInt(txtTotalMoney.getText());
             Integer qty = Integer.parseInt(txtQtyTicket.getText());
 
-            String s1 =LocalDateTime.now().toString().substring(0,11);
+            String s1 = LocalDateTime.now().toString().substring(0,11);
             String s2 = LocalDateTime.now().toString().substring(11,21);
             String s3 = s1+s2;
 

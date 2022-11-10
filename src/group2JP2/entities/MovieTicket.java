@@ -56,6 +56,8 @@ public class MovieTicket {
                     selectMovieTicket.add(this);
                 }
                 this.choose.setVisible(false);
+                Parent re = FXMLLoader.load(getClass().getResource("../movieticket/list/list.fxml"));
+                Main.movieStage.setScene(new Scene(re,Main.width,Main.height));
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
@@ -65,8 +67,7 @@ public class MovieTicket {
             try{
                 selectMovieTicket.remove(this);
                 this.delete.setVisible(false);
-                Parent re = FXMLLoader.load(getClass().getResource("../orderticket/create/create.fxml"));
-                Main.movieStage.setTitle("Create Order");
+                Parent re = FXMLLoader.load(getClass().getResource("../movieticket/list/list.fxml"));
                 Main.movieStage.setScene(new Scene(re,Main.width,Main.height));
             }catch (Exception e){
                 System.out.println(e.getMessage());

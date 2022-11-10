@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.movieticket.list.MovieTicketListController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="836.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group2JP2.movieticket.list.MovieTicketListController">
    <children>
       <Text fill="#b81818" layoutX="368.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MOVIE TICKET" textAlignment="CENTER" wrappingWidth="520.69921875">
          <font>
@@ -16,11 +16,11 @@
          <font>
             <Font name="Franklin Gothic Heavy" size="16.0" />
          </font></Button>
-      <Button layoutX="858.0" layoutY="445.0" mnemonicParsing="false" onAction="#goToListFilm" prefHeight="42.0" text="Go To List Film" textFill="#b81818">
+      <Button layoutX="843.0" layoutY="598.0" mnemonicParsing="false" onAction="#goToListFilm" prefHeight="42.0" text="Go To List Film" textFill="#b81818">
          <font>
             <Font name="Franklin Gothic Heavy" size="16.0" />
          </font></Button>
-       <TableView fx:id="tbMovieTicket" layoutX="14.0" layoutY="124.0" prefHeight="308.0" prefWidth="1229.0">
+       <TableView fx:id="tbMovieTicket" layoutX="14.0" layoutY="124.0" prefHeight="211.0" prefWidth="1229.0">
            <columns>
                <TableColumn fx:id="tdIdTicket" prefWidth="82.0" text="IdTicket" />
                <TableColumn fx:id="tdNameFilm" prefWidth="220.0" text="Name Of Film" />
@@ -33,11 +33,30 @@
                <TableColumn fx:id="tdAction" prefWidth="107.0" text="Action" />
            </columns>
        </TableView>
-      <Button layoutX="1146.0" layoutY="445.0" mnemonicParsing="false" onAction="#goToCreatOrder" prefHeight="42.0" text="Go To Bag" textFill="#b81818">
+      <TableView fx:id="tbBag" layoutX="14.0" layoutY="445.0" prefHeight="134.0" prefWidth="1229.0">
+         <columns>
+            <TableColumn fx:id="tdIdTicketBag" prefWidth="82.0" text="IdTicket" />
+            <TableColumn fx:id="tdNameFilmBag" prefWidth="220.0" text="Name Of Film" />
+            <TableColumn fx:id="tdStarShowBag" prefWidth="204.0" text="Start Show" />
+            <TableColumn fx:id="tdEndShowBag" prefWidth="205.0" text="End Show" />
+            <TableColumn fx:id="tdSeatNameBag" prefWidth="103.0" text="Seat" />
+            <TableColumn fx:id="tdRoomNameBag" prefWidth="94.0" text="Room" />
+            <TableColumn fx:id="tdPriceBag" prefWidth="94.0" text="Price" />
+            <TableColumn fx:id="tdTypeSeatBag" prefWidth="119.0" text="Type Of Seat" />
+            <TableColumn fx:id="tdActionBag" prefWidth="107.0" text="Action" />
+         </columns>
+      </TableView>
+      <Text fill="#f20909" layoutX="490.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LIST MOVIETICKET IN ORDER">
          <font>
-            <Font name="Franklin Gothic Heavy" size="16.0" />
-         </font></Button>
-      <Button onAction="#goToListOrder" layoutX="1004.0" layoutY="445.0" mnemonicParsing="false" prefHeight="42.0" text="Go To Oder List" textFill="#b81818">
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="1137.0" layoutY="598.0" mnemonicParsing="false" onAction="#createOrder" prefHeight="42.0" text="Create Order" textFill="#b81818">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="1004.0" layoutY="598.0" mnemonicParsing="false" onAction="#goToListOrder" prefHeight="42.0" text="List Order" textFill="#b81818">
          <font>
             <Font name="Franklin Gothic Heavy" size="15.0" />
          </font>
